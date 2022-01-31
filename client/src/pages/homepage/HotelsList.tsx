@@ -53,25 +53,3 @@ const HotelList = () => {
 
 export default HotelList
 
-// let hotelList;
-
-    // const getHotelByCity = async () => {
-    //     const response = await axios.get('http://localhost:5000/hotelsByCities', {params: {city: state}})
-    //     .then(res => {
-    //         setHotelsByCity(res.data)
-    //         console.log(state)
-    //     })
-        
-    //     hotelList = hotelsByCity.map((hotel, index) => {
-    //         return (
-    //             <Li key={index}>
-    //                 <HotelListItem 
-    //                     hotelName={hotel.hotelName}
-    //                     hotelImg={hotel.hotelImg}
-    //                 />
-    //             </Li> 
-    //         )
-    //     })
-    // }
-
-    // getHotelByCity()

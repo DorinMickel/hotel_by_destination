@@ -1,8 +1,8 @@
 import axios from 'axios';
 import React from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { actionCreators, State } from '../../redux';
+import { actionCreators } from '../../redux';
 import { Title , Container, InnerContainer } from '../../styles/hotelListItemStyle'
 import { Button, ImgDiv } from '../../styles/styledComponents';
 
@@ -16,7 +16,6 @@ type HotelListItemProps = {
 const HotelListItem = (props: HotelListItemProps) => {
     const dispatch = useDispatch();
     const {chooseHotel} = bindActionCreators(actionCreators, dispatch);
-    const hotelState = useSelector((state: State) => state.hotel)
 
     const setChosenHotel = async (id: number) => {
         const response = await axios.get('http://localhost:5000/hotel', {params: {id: id}})
@@ -26,7 +25,7 @@ const HotelListItem = (props: HotelListItemProps) => {
     return (
         <Container>
             <ImgDiv>
-                <img style={{width: '100%'}} src={props.hotelImg}/>
+                <img style={{width: '100%'}} src={props.hotelImg} alt={props.hotelName}/>
             </ImgDiv>
             <InnerContainer>
                 <a href={`/hotel/${props.id}`} onClick={() => setChosenHotel(props.id)}><Title>{props.hotelName}</Title></a>
