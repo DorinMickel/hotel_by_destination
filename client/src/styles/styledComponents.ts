@@ -40,12 +40,17 @@ export const Li = styled.li`
     
 `
 export const Button = styled.button`
-    background-color: rgb(246,98,121);
-    border: solid 1px grey;
+    background-color: white; 
+    border: solid 2px rgb(246,98,121);
+    color: rgb(246,98,121);
     border-radius: 5px;
     margin: 8px;
-    padding: 10px;
-    font-size: 20px
+    padding: 0.5rem;
+    font-size: 16px;
+    &:hover {
+        background-color: rgb(246,98,121); 
+        color: white;
+    }
 `
 export const H1 = styled.h1`
     

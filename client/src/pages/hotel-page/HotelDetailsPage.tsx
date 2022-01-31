@@ -12,7 +12,7 @@ const HotelDetailsPage = () => {
         <Container>
             <H1>{hotelState.hotelName}</H1>
             <Container>
-                <img src={hotelState.hotelImg}/>
+                <img style={{maxWidth: '100%'}} src={hotelState.hotelImg} alt={hotelState.hotelName}/>
                 <p>{hotelState.hotelDescription}</p>
             </Container>
         </Container>
