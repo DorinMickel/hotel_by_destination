@@ -5,8 +5,14 @@ import breakpoints from './breakpoints/breakpoints';
 const H1Style = styled.h1`
     margin: 8px;
     color: rgb(64,64,64);
+    @media screen and ${breakpoints.device.md}{
+        font-size: 1.5em;
+    }
     @media screen and ${breakpoints.device.sm}{
-        font-size: 1.1em;
+        font-size: 1.2em;
+    }
+    @media screen and ${breakpoints.device.xs}{
+        font-size: 1em;
     }
 `
 
