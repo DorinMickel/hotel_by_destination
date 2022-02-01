@@ -2,14 +2,14 @@ import React from 'react';
 import Container from '../../common/Container';
 import Dropdown from '../homepage/dropdown/Dropdown';
 import HotelList from './hotels-list/HotelsList';
-import '../../common/styles/common-styles.css'
+import TopImg from '../../common/TopImg';
 
 
 const HotelsByCityContainer = () => {
 
     return (
         <React.Fragment>
-            <div className='top-img'></div>
+            <TopImg/>
             <Container>
                 <Dropdown/>
                 <HotelList/>

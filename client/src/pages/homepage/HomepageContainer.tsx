@@ -1,14 +1,13 @@
 import React from 'react';
 import Container from '../../common/Container';
 import Dropdown from './dropdown/Dropdown';
-import "../../common/styles/common-styles.css"
+import TopImg from '../../common/TopImg';
 
 
 const HomepageContainer = () => {
     return (
         <React.Fragment>
-            <div className='top-img'></div>
-            {/* <TopImg/> */}
+            <TopImg/>
             <Container>
                 <Dropdown/>
             </Container>

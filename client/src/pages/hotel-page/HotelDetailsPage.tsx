@@ -2,10 +2,12 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import { State } from '../../redux';
 import H1 from '../../common/H1';
-import './styles/hotel-details-page.css'
-import Box from '../../common/Box';
 import Container from '../../common/Container';
 import Button from '../../common/Button';
+import Img from './styled-components/Img';
+import ExtendedBox from './styled-components/ExtendedBox';
+import TopImg from '../../common/TopImg';
+import './styles/hotel-details-page.css'
 
 
 const HotelDetailsPage = () => {
@@ -19,13 +21,13 @@ const HotelDetailsPage = () => {
     
     return (
         <React.Fragment>
-            <div className='top-img'></div>
+            <TopImg/>
             <Container>
-                <Box>
+                <ExtendedBox>
                     <H1 h1Text={hotelState.hotelName}/>
-                </Box>
+                </ExtendedBox>
                 <Container>
-                    <img className='img-htl-dtl-pge' src={hotelState.hotelImg} alt={hotelState.hotelName}/>
+                    <Img src={hotelState.hotelImg} alt={hotelState.hotelName}/>
                     <p className='p-htl-dtl-pge'>{hotelState.hotelDescription}</p>
                     <Button btnText='Go Back' handleClick={goBackBtn}/>
                 </Container>

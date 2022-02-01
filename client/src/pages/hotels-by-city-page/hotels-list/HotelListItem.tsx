@@ -4,7 +4,7 @@ import { useDispatch } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { actionCreators } from '../../../redux';
 import Button from '../../../common/Button';
-import ImgDiv from '../../../common/ImgDiv';
+import ImgDiv from './styled-components/ImgDiv';
 import './styles/hotel-list-item.css'
 import Container from '../../../common/Container';
 import Title from './styled-components/Title';
@@ -26,20 +26,26 @@ const HotelListItem = (props: HotelListItemProps) => {
     }
 
     const bookNowBtn = () => {
+        setChosenHotel(props.id)
         window.location.href = `/hotel/${props.id}`
     }
 
     return (
-        <Container isRow>
+        <Container isRow isNotAlign>
             <ImgDiv>
-                <img style={{width: '100%'}} src={props.hotelImg} alt={props.hotelName}/>
+                <img className='img--htl-lst-itm' src={props.hotelImg} alt={props.hotelName}/>
             </ImgDiv>
-            <a className='a-htl-lst-itm' href={`/hotel/${props.id}`} onClick={() => setChosenHotel(props.id)}>
-                <Title ttlText={props.hotelName}/>
-                </a>
-            <div className='btn-htl-lst-itm'>
-                <Button btnText='Book now' handleClick={bookNowBtn}/>
-            </div>
+            <Container isNotAlign>
+                <div className='a-htl-lst-itm'>
+                <a href={`/hotel/${props.id}`} onClick={() => setChosenHotel(props.id)}>
+                    <Title ttlText={props.hotelName}/>
+                    </a>
+                </div>
+                <div className='btn-htl-lst-itm'>
+                    <Button btnText='Book now' handleClick={bookNowBtn}/>
+                </div>
+            </Container>
+            
         </Container>
     )
 }
