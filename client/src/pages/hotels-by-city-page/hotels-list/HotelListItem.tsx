@@ -25,6 +25,10 @@ const HotelListItem = (props: HotelListItemProps) => {
         chooseHotel(response.data)
     }
 
+    const bookNowBtn = () => {
+        window.location.href = `/hotel/${props.id}`
+    }
+
     return (
         <Container isRow>
             <ImgDiv>
@@ -34,7 +38,7 @@ const HotelListItem = (props: HotelListItemProps) => {
                 <Title ttlText={props.hotelName}/>
                 </a>
             <div className='btn-htl-lst-itm'>
-                <Button btnText='Book now'/>
+                <Button btnText='Book now' handleClick={bookNowBtn}/>
             </div>
         </Container>
     )

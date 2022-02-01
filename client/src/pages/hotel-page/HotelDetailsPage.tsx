@@ -13,6 +13,10 @@ const HotelDetailsPage = () => {
     const hotelState = useSelector((state: State) => state.hotel)
     const destinationState = useSelector((state: State) => state.destination)
     console.log(hotelState)
+
+    const goBackBtn = () => {
+        window.location.href = `/${destinationState}`
+    }
     
     return (
         <React.Fragment>
@@ -24,7 +28,7 @@ const HotelDetailsPage = () => {
                 <Container>
                     <img className='img-htl-dtl-pge' src={hotelState.hotelImg} alt={hotelState.hotelName}/>
                     <p className='p-htl-dtl-pge'>{hotelState.hotelDescription}</p>
-                    <a href={`/${destinationState}`}><Button btnText='Go Back'/></a>
+                    <Button btnText='Go Back' handleClick={goBackBtn}/>
                 </Container>
             </Container>
             
