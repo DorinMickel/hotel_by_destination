@@ -1,0 +1,10 @@
+.btn-htl-lst-itm {
+    align-self: end;
+    flex-grow: 1;
+    text-align: end;
+    margin: 10px;
+}
+
+.a-htl-lst-itm {
+    align-self: flex-start;
+}

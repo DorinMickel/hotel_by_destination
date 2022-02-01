@@ -15,27 +15,10 @@ app.get('/', (req, res) => {
 })
 
 app.use(cities)
-// app.get('/cities', (req, res) => {
-//   res.json(cities)
-// })
 
 app.use(hotelsByCity)
-// app.get('/hotelsByCities', (req, res) => {
-//   const hotelsByCity = hotelsData.filter(hotel => {
-//       return hotel.city === req.query.city
-//   })
-//   res.json(hotelsByCity)
-// })
 
 app.use(chosenHotel)
-// app.get('/hotel', (req,res) => {
-//   const chosenHotel = hotelsData.find(hotel => {
-//     return (
-//       hotel.id === parseInt(req.query.id)
-//     )
-//   })
-//   res.json(chosenHotel)
-// })
 
 app.listen(port, () => {
   console.log(`Home assignment app listening on port ${port}`)

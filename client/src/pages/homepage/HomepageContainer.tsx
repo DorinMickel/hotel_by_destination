@@ -1,14 +1,19 @@
 import React from 'react';
-import { Container } from '../../styles/styledComponents';
-import Dropdown from './Dropdown';
-import HotelList from './HotelsList';
+import Container from '../../common/Container';
+import Dropdown from './dropdown/Dropdown';
+import "../../common/styles/common-styles.css"
+
 
 const HomepageContainer = () => {
     return (
-        <Container>
-            <Dropdown/>
-            <HotelList/>
-        </Container>
+        <React.Fragment>
+            <div className='top-img'></div>
+            {/* <TopImg/> */}
+            <Container>
+                <Dropdown/>
+            </Container>
+        </React.Fragment>
+        
     )
 }
 
