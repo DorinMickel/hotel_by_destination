@@ -8,7 +8,6 @@ import Container from '../../common/Container';
 import Button from '../../common/Button';
 
 
-
 const HotelDetailsPage = () => {
     const hotelState = useSelector((state: State) => state.hotel)
     const destinationState = useSelector((state: State) => state.destination)
