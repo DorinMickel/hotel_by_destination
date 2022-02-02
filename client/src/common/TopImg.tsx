@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import "../images/beach.jpg";
+
 
 const TopImg = styled.div`
     width: 100%;
