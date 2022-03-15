@@ -3,6 +3,12 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
     entry: './src/index.tsx',
+    output: {
+      filename: 'bundle.js',
+      path: path.resolve(__dirname, 'dist'),
+      clean: true,
+      publicPath: '/'
+    },
   module: {
     rules: [
       {
@@ -12,7 +18,7 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        use:  [  'style-loader', 'css-loader']
+        use: [ 'style-loader', 'css-loader']
       },
       {
         test: /\.(png|jpg|gif)$/i,
@@ -22,12 +28,6 @@ module.exports = {
   },
   resolve: {
     extensions: ['.tsx', '.ts', '.js'],
-  },
-  output: {
-    filename: 'bundle.js',
-    path: path.resolve(__dirname, 'dist'),
-    clean: true,
-    publicPath: '/'
   },
   plugins: [
       new HtmlWebpackPlugin({
