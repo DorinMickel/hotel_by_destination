@@ -6,22 +6,21 @@ import Container from '../../common/Container';
 import Button from '../../common/Button';
 import Img from './styled-components/Img';
 import ExtendedBox from './styled-components/ExtendedBox';
-import TopImg from '../../common/TopImg';
 import './styles/hotel-details-page.css'
+import { useNavigate } from 'react-router';
 
 
-const HotelDetailsPage = () => {
+const HotelDetailsPage: React.FC = () => {
     const hotelState = useSelector((state: State) => state.hotel)
     const destinationState = useSelector((state: State) => state.destination)
-    console.log(hotelState)
+    const navigate = useNavigate()
 
     const goBackBtn = () => {
-        window.location.href = `/${destinationState}`
+        navigate(`/${destinationState}`)
     }
     
     return (
         <React.Fragment>
-            <TopImg/>
             <Container>
                 <ExtendedBox>
                     <H1 h1Text={hotelState.hotelName}/>

@@ -7,14 +7,16 @@ import Select from './styled-components/styledDropdown';
 import Label from './styled-components/styledFormLabel';
 import Box from '../../../common/Box';
 import H1 from '../../../common/H1';
+import { useNavigate } from 'react-router';
 
 
-const Dropdown = () => {
+const Dropdown: React.FC = () => {
 
     const dispatch = useDispatch();
     const {chooseDestination} = bindActionCreators(actionCreators, dispatch);
     const destinationState = useSelector((state: State) => state.destination)
     
+    const navigate = useNavigate()
     const [citiesList, setCitiesList] = useState([]);
     useEffect(() => {
             axios.get('http://localhost:5000/cities')
@@ -29,9 +31,9 @@ const Dropdown = () => {
         )
     })
 
-    const chosenCity = async (e: any) => {
-        await chooseDestination(e.target.value)
-        window.location.href = `/${e.target.value}`
+    const chosenCity = async (e: React.FormEvent) => {
+        await chooseDestination((e.target as HTMLSelectElement).value)
+        navigate(`/${(e.target as HTMLSelectElement).value}`)
     }
     
     return (

@@ -1,16 +1,19 @@
 import React from 'react';
+import { Outlet, useParams } from 'react-router';
 import Container from '../../common/Container';
 import Dropdown from './dropdown/Dropdown';
 import TopImg from '../../common/TopImg';
 
-
-const HomepageContainer = () => {
+const HomepageContainer: React.FC = () => {
+    const params = useParams()
+    console.log(params.id)
     return (
         <React.Fragment>
             <TopImg/>
             <Container>
-                <Dropdown/>
+                {params.id ? null : <Dropdown/>}
             </Container>
+            <Outlet/>
         </React.Fragment>
         
     )
