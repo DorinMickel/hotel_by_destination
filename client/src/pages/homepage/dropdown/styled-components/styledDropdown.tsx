@@ -11,7 +11,7 @@ const StyledSelect = styled.select`
 `
 interface SelectProps {
     options: JSX.Element[],
-    handleChange?: (e: any) => void,
+    handleChange?: (e: React.FormEvent) => void,
     value?: string
 }
 

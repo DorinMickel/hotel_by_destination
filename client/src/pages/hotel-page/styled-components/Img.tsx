@@ -2,8 +2,6 @@ import React from "react";
 import styled from "styled-components";
 import breakpoints from "../../../common/breakpoints/breakpoints";
 
-
-
 const StyledImg = styled.img`
     margin-top: 10px;
     

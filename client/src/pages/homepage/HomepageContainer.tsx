@@ -6,7 +6,6 @@ import TopImg from '../../common/TopImg';
 
 const HomepageContainer: React.FC = () => {
     const params = useParams()
-    console.log(params.id)
     return (
         <React.Fragment>
             <TopImg/>
