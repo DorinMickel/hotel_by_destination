@@ -1,8 +1,6 @@
 import styled from "styled-components";
 import Container from "./Container";
 
-
-
 const Box = styled(Container)`
     position: absolute;
     max-width: 800px;
