@@ -7,7 +7,6 @@ const destinationReducer = (state: string = initialState, action: DestAction) =>
     switch(action.type){
         case ActionType.CHOOSE_DESTINATION:
             return action.payload
-            
         default:
             return state
     }

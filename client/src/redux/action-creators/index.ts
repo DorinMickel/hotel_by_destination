@@ -13,16 +13,7 @@ export const chooseDestination = (destination: string) => {
     }
 }
 
-interface Hotel {
-    id: number,
-    city: string,
-    hotelName: string,
-    hotelImg: string, 
-    hotelDescription: string
-}
-
-
-export const chooseHotel = (hotel: Hotel) => {
+export const chooseHotel = (hotel: HotelAction["payload"]) => {
     return (dispatch: Dispatch<HotelAction>) => {
         dispatch({
             type: ActionType.CHOSEN_HOTEL,
@@ -31,15 +22,8 @@ export const chooseHotel = (hotel: Hotel) => {
     }
 }
 
-type HotelsByCity = [{
-    hotelName: string,
-    hotelImg: string,
-    id: number,
-    hotelDescription: string,
-    city: string
-}]
 
-export const getHotelsByCity = (hotelsByCity: HotelsByCity) => {
+export const getHotelsByCity = (hotelsByCity: HotelsListAction["payload"]) => {
     return (dispatch: Dispatch<HotelsListAction>) => {
         dispatch({
             type: ActionType.GET_HOTELS_LIST,
