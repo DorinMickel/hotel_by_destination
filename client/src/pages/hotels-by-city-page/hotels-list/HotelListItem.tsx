@@ -1,8 +1,5 @@
-import axios from 'axios';
 import React from 'react';
 import { useDispatch } from 'react-redux';
-// import { bindActionCreators } from 'redux';
-// import { actionCreators } from '../../../redux';
 import Button from '../../../common/Button';
 import ImgDiv from './styled-components/ImgDiv';
 import './styles/hotel-list-item.css'
@@ -10,7 +7,7 @@ import Container from '../../../common/Container';
 import Title from './styled-components/Title';
 import { useNavigate } from 'react-router';
 import { Link } from 'react-router-dom';
-import { chooseHotel } from '../../../redux/action-creators';
+import { getHotelThunk } from '../../../redux/thunks/getHotelThunk';
 
 
 type HotelListItemProps = {
@@ -21,12 +18,10 @@ type HotelListItemProps = {
 
 const HotelListItem = (props: HotelListItemProps) => {
     const dispatch = useDispatch();
-    // const {chooseHotel} = bindActionCreators(actionCreators, dispatch);
     const navigate = useNavigate()
 
-    const setChosenHotel = async (id: number) => {
-        const response = await axios.get('http://localhost:5000/hotel', {params: {id: id}})
-        dispatch(chooseHotel(response.data))
+    const setChosenHotel = (id: number) => {
+        dispatch(getHotelThunk(id))
     }
 
     const bookNowBtn = () => {
