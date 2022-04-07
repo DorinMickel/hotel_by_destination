@@ -7,7 +7,7 @@ import Label from './styled-components/styledFormLabel';
 import Box from '../../../common/Box';
 import H1 from '../../../common/H1';
 import { useNavigate } from 'react-router';
-import { chooseDestination } from '../../../redux/action-creators';
+import { chooseDestination, clearHotels } from '../../../redux/action-creators';
 import { getHotelsByCityThunk } from '../../../redux/thunks/getHotelsListThunk';
 
 
@@ -31,10 +31,11 @@ const Dropdown: React.FC = () => {
         )
     })
 
-    const chosenCity = (e: React.FormEvent) => {
+    const chosenCity = async (e: React.FormEvent) => {
+        dispatch(clearHotels())
         const city = (e.target as HTMLSelectElement).value
         dispatch(chooseDestination(city))
-        dispatch(getHotelsByCityThunk(city))
+        await dispatch(getHotelsByCityThunk(city, 1))
         navigate(`/${city}`)
     }
     

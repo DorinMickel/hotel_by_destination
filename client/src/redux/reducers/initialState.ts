@@ -5,3 +5,9 @@ export const HotelInitialState = {
     hotelImg: '',
     hotelDescription: ''
 }
+
+export const HotelsListInitialState = {
+    nextPage: 2,
+    currentPage: 1,
+    hotelsListResults: [HotelInitialState]
+}
