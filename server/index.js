@@ -10,9 +10,6 @@ const port = 5000
 app.use(cors())
 app.use(express.json())
 
-app.get('/', (req, res) => {
-  res.send('Hello World!')
-})
 
 app.use(cities)
 
@@ -20,9 +17,7 @@ app.use(hotelsByCity)
 
 app.use(chosenHotel)
 
-app.listen(port, () => {
-  console.log(`Home assignment app listening on port ${port}`)
-})
+app.listen(port)
 
 
 
